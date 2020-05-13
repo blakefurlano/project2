@@ -1,15 +1,20 @@
 import React from 'react';
+import {Imagedraw} from './picture.js';
+import {Generate} from './generate';
 
-var _img = document.getElementById('id1');
-var newImg = new Image;
-newImg.onload = function(){
-  _img.src = this.src;
+
+
+export function Location(props) {
+  const name = props.name;
+
+  return (
+    <div className="location">
+      <span className="restaurants">{name.name}</span>
+      <span className="remove-button" onClick={() => props.remove(name.name)}>&#x2716;</span>
+      <Imagedraw />
+      <span className="food-type">{name.type}</span>
+      <Generate />
+    </div>
+  );
 }
-export function Location(){
-  <div className="location">
-    <span className="restaurants">Name</span>
-    <span className="remove-button">&#x2716;</span>
-    <span className="food-type">Type</span>
-    newImg();
-  </div>
-}
+

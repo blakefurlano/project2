@@ -1,0 +1,71 @@
+#food-root{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.location{
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgba(105, 98, 87, 0.842);
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: rgb(255, 166, 0);
+  text-shadow: 0 0 5px black;
+  box-shadow: 0 0 10px black;
+  position: relative;
+  border: solid rgba(148, 67, 0, 0.5);
+}
+.location > .generate{
+  position: absolute;
+  bottom: 15px;
+  left: 75px;
+  right: 75px;
+  background-color: rgba(148, 67, 0, 0.5);
+  border-color: brown;
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 7px 7px 10px black;
+}
+
+.location > .food-image{
+  width: 100px;
+  position: absolute;
+  /* bottom: 75px; */
+  top: 100px;
+  left: 90px;
+}
+
+.location > .restaurants{
+  font-size: 20px;
+  position: absolute;
+  top: 1px;
+  left: 10px;
+}
+
+.location > .remove-button{
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  text-shadow: 0 0 2px black;
+  user-select: none;
+}
+
+.location > .remove-button:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.location > .food-type{
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-size: 20px;
+  
+}
+
+
+
