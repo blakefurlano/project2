@@ -1,31 +1,41 @@
-import React, { useState } from 'react';
+import React, {useEffect}from 'react';
+
 import './App.css';
 // import {Generate} from './generate.js';
 import { Location } from './location.js';
+import {useSelector, useDispatch} from 'react-redux';
+import {loadLocation} from './actions';
 
 
 
-const restaurants = [
-  { name: "Arbys", type: "Fast-Food" },
-  { name: "Arbys3", type: "Fast-Food" },
-  { name: "Arbys2", type: "Fast-Food" },
-  { name: "Arbys1", type: "Fast-Food" },
-
-];
 
 function App() {
-  const [name, setName] = useState(restaurants);
 
-  const removeName = name => {
-    setName(name.filter(name => name.name !== name));
-  }
+ const restaurants = useSelector(state => state.restaurants);
+ const dispatch = useDispatch();
+
+// useEffect(() => {
+var n = Math.floor(Math.random() * 103) + 1;
+//order that a fetch will return a restaurant->  id: name: type: link: img:
+const onLoad = () => {
+dispatch(loadLocation(n));
+
+}
+
+  // const [title, setTitle] = useState(restaurants);
+
+  // const removeLocation = name => {
+  //   setTitle(title.filter(title => title.name !== name));
+  // }
   return (
+    
     <div id="food-root">
-      {name.map(name => <Location key={name.name/*need to add a number gerneator to be a key generator*/}
-        name={name} remove={removeName} />)}
+      <button onClick = {onLoad}>Generate</button>
+      {restaurants.map(location => <Location key={location.name} location={location}/>)}
+   
     </div>
 
-
+// location={title} remove={removeTitle}
   );
 }
 

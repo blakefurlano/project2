@@ -3,7 +3,11 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-
+#greeting{
+  margin: 50px;
+  font-size: 24pt;
+  font-family: serif;
+}
 
 .location{
   margin-top: 10px;

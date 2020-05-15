@@ -5,15 +5,15 @@ import {Generate} from './generate';
 
 
 export function Location(props) {
-  const name = props.name;
+  const location = props.location;
 
   return (
     <div className="location">
-      <span className="restaurants">{name.name}</span>
-      <span className="remove-button" onClick={() => props.remove(name.name)}>&#x2716;</span>
+      <span className="restaurants">{location.name}</span>
+       {/* <span className="remove-button" onClick={() => props.remove(title.name)}>&#x2716;</span>  */}
       <Imagedraw />
-      <span className="food-type">{name.type}</span>
-      <Generate />
+      <span className="food-type">{location.type}</span>
+      <a className="generate" href={location.link} target="blank">Take me there</a>
     </div>
   );
 }
