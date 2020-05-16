@@ -1,6 +1,6 @@
 import React from 'react';
 import {Imagedraw} from './picture.js';
-import {Generate} from './generate';
+
 
 
 

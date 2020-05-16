@@ -1,7 +1,6 @@
-import React, {useEffect}from 'react';
+import React, {}from 'react';
 
 import './App.css';
-// import {Generate} from './generate.js';
 import { Location } from './location.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadLocation} from './actions';
