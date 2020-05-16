@@ -1,7 +1,14 @@
 export const Action = Object.freeze({
    LoadRestaurants: 'LoadRestaurants', 
+   StartWaiting: 'StartWaiting',
 });
 
+export function StartWaiting(){
+    return{
+        type: Action.StartWaiting,
+        
+    };
+}
 export function loadRestaurants(restaurants){
     return{
         type: Action.LoadRestaurants,
@@ -18,6 +25,7 @@ const host = "https://restaurantpicker.duckdns.org:8442";
 
 export function loadLocation(id){
   return dispatch =>{
+      dispatch(StartWaiting());
     fetch(`${host}/restraunt/${id}`)
     .then(checkForErrors)
     .then(response => response.json())

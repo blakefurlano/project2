@@ -9,8 +9,15 @@ function reducer(state = initialState, action){
         case Action.LoadRestaurants:
             return {
                 ...state,
+                isWaiting: false,
                 restaurants: action.payload,
             }
+            case Action.StartWaiting:
+                return{
+                    ...state,
+                    isWaiting: true,
+                }
+
         default:
             return state;
     }

@@ -9,6 +9,7 @@ export function Location(props) {
 
   return (
     <div className="location">
+      
       <span className="restaurants">{location.name}</span>
        {/* <span className="remove-button" onClick={() => props.remove(title.name)}>&#x2716;</span>  */}
       <Imagedraw />

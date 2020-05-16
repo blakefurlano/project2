@@ -13,6 +13,7 @@ function App() {
 
  const restaurants = useSelector(state => state.restaurants);
  const dispatch = useDispatch();
+ const isWaiting = useSelector(state  => state.isWaiting);
 
 // useEffect(() => {
 var n = Math.floor(Math.random() * 103) + 1;
@@ -30,9 +31,13 @@ dispatch(loadLocation(n));
   return (
     
     <div id="food-root">
-      <button onClick = {onLoad}>Generate</button>
+      {isWaiting && <div className="loading-icon" />}
+      <div id="greeting">
+      Click the button to find a restaurant!
+    </div>
+      <div id="generate-button"> <button onClick = {onLoad}>Generate</button> </div>
       {restaurants.map(location => <Location key={location.name} location={location}/>)}
-   
+     
     </div>
 
 // location={title} remove={removeTitle}
